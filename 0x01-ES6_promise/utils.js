@@ -12,5 +12,4 @@ export function uploadPhoto() {
       firstName: 'Guillaume',
       lastName: 'Salva',
     });
-  }
-  
+  }  
