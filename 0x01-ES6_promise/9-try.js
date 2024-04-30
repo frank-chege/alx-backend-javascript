@@ -6,7 +6,7 @@ export default function guardrail(mathFunction){
         array.push(value, text);
     }
     catch(error){
-        array.push(error, text);
+        array.push('Error: cannot divide by 0', text);
     }
     return array;
 }
