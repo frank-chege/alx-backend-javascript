@@ -3,16 +3,18 @@ export default function updateStudentGradeByCity(std_arr, city, grades_arr){
     //if a match is found map the grade to the student obj
     //insert the grade to the student's object
     //map and filter the students array by location
-    for (let obj of std_arr){
+    let newArr = std_arr.map((obj) => {
         for (let grade of grades_arr){
             if (obj.id === grade.studentId){
                 obj.grade = grade.grade;
+                return obj;
             }
             else{
                 obj.grade = 'N/A'
+                return obj;
             }
         }
-    }
-    let newArr = std_arr.filter((obj) => obj.location === city);
-    return newArr;
+    })
+    let filtered_arr = newArr.filter((student) => student.location === city);
+    return filtered_arr;
 }
