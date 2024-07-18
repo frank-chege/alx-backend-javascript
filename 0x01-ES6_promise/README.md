@@ -1,1 +1,1 @@
-javascript basics
+es6 promises

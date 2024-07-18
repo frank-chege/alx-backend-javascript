@@ -1,1 +1,1 @@
-classes in jaavascript
+ES6 CLASSES

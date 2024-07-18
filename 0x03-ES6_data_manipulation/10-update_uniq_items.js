@@ -1,10 +1,10 @@
-export default function updateUniqueItems(map_arg){
-    if (!(map_arg instanceof Map)){
-        throw new Error('Cannot process');
+export default function updateUniqueItems(map) {
+  if (!(map instanceof Map)) {
+    throw new Error('Cannot process');
+  }
+  map.forEach((value, key) => {
+    if (value === 1) {
+      map.set(key, 100);
     }
-    for (let [key, value] of map_arg){
-        if (value === 1){
-            map_arg.set(key, 100);
-        }
-    }
+  });
 }

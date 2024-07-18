@@ -1,14 +1,16 @@
-export default function cleanSet(set_arg, startString){
-    //get all values that start with a specific string
-    //truncate the start string
-    //add the remaining string to the string to be returned
-    //separated by -
-    let ret_str = '';
-    for (let str of set_arg){
-        if (str.includes(startString)){
-            ret_str += str.replace(startString, '') + '-';
-        }
+export default function cleanSet(set, startString) {
+  const parts = [];
+  if (!set || !startString || !(set instanceof Set) || typeof startString !== 'string') {
+    return '';
+  }
+  for (const value of set.values()) {
+    if (typeof value === 'string' && value.startsWith(startString)) {
+      const valueSubStr = value.substring(startString.length);
+
+      if (valueSubStr && valueSubStr !== value) {
+        parts.push(valueSubStr);
+      }
     }
-    ret_str = ret_str.slice(0, -1);
-    return ret_str;
+  }
+  return parts.join('-');
 }
